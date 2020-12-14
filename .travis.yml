@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+- docker
+
+script:
+  - docker build -t sakshi9715/sds:19.10 ./jenkins/
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker push sakshi9715/sds:19.10
